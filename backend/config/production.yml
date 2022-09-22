@@ -1,0 +1,2 @@
+server:
+  prod: "https://scandiweb-coral.vercel.app"

@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.8;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+  transition: all 300ms ease-in-out;
+  @apply transition-transform ease-in-out delay-150 duration-300;
+}
+input {
+  @apply bg-gray-50 border col-span-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-1 focus:outline-blue-300 block w-full p-2.5;
+}

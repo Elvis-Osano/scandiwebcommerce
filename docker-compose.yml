@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: ./Dockerfile
+      context: ./nginx
+    ports:
+      - '80:80'
+  frontend:
+    image: frontend
+    build:
+      context: frontend
+      dockerfile: ./Dockerfile
+      
+    
+    
+  backend:
+    image: backend
+    build:
+      context: backend
+      dockerfile: ./Dockerfile
+    
+    

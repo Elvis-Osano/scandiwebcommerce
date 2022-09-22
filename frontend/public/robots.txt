@@ -1,0 +1,9 @@
+
+
+# Block all crawlers for /add-product
+User-agent: *
+Disallow: /add-product
+
+# Allow all crawlers
+User-agent: *
+Allow: /
