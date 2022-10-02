@@ -1,0 +1,21 @@
+---
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 361917574612.dkr.ecr.us-east-1.amazonaws.com 
+  build:
+    commands:
+      - "echo Build started on `date`"
+      - "echo Building the Docker image..."
+      - "cd server/"
+      - "docker build  -t scandi/server ."
+      - "docker tag scandi/server 361917574612.dkr.ecr.us-east-1.amazonaws.com/scandi/server"
+  post_build:
+    commands:
+      - "echo Build completed on `date`"
+      - "echo Pushing the Docker image..."
+      - "docker push 361917574612.dkr.ecr.us-east-1.amazonaws.com/scandi/server"
+artifacts:
+  files: "**/*"
