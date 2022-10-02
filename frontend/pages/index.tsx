@@ -31,7 +31,7 @@ const IndexPage = () => {
                 className="bg-blue-600 font-sans h-9 w-10  "
                 title="add new Product "
               >
-                Add
+                ADD
               </Button>
             </Link>
 
@@ -58,7 +58,7 @@ const IndexPage = () => {
               }}
               disabled={ids.length ? false : true}
             >
-              Mass Delete
+              MASS DELETE
             </Button>
           </div>
         </div>

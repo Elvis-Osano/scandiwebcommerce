@@ -42,7 +42,7 @@ const AddProducts = () => {
                 },
               }}
             >
-              Save
+              SAVE
             </Button>
 
             <Link href={"/"}>
@@ -62,7 +62,7 @@ const AddProducts = () => {
                   },
                 }}
               >
-                Cancel
+                CANCEL
               </Button>
             </Link>
           </div>
