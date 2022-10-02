@@ -1,25 +1,32 @@
 version: '3.4'
-
 services:
-  nginx:
+  server:
+    image: 361917574612.dkr.ecr.us-east-1.amazonaws.com/scandi/server
+    container_name: scandi_server
     restart: always
+    depends_on:
+      - frontend
+      - backend
     build:
       dockerfile: ./Dockerfile
-      context: ./nginx
+      context: ./server
     ports:
       - '80:80'
   frontend:
-    image: frontend
+    container_name: scandi_frontend
+    image: 361917574612.dkr.ecr.us-east-1.amazonaws.com/scandi/frontend
     build:
       context: frontend
-      dockerfile: ./Dockerfile
-      
+      dockerfile: ./Dockerfile  
     
     
   backend:
-    image: backend
+    container_name: scandi_backend
+    image: 361917574612.dkr.ecr.us-east-1.amazonaws.com/scandi/backend
     build:
       context: backend
       dockerfile: ./Dockerfile
+    environment :
+      - DB_URL=mysql://elvis:incorrect@database-1.c0rrseoxusll.us-east-1.rds.amazonaws.com:3306/aaadb
     
     
