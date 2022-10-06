@@ -38,6 +38,7 @@ const ProductForm = () => {
             }
             ref={item.name === "sku" ? inputReference : null}
             onKeyDown={handleEnter}
+            
           />
         </div>
       ))}
